@@ -1,0 +1,529 @@
+on switch
+
+
+hostname CamodocChaseSW1
+v4.0.0.93 / RLSB4.0HF_950_778_052
+CLI v1.0
+file SSD indicator encrypted
+@
+ssd-control-start
+ssd config
+ssd file passphrase control unrestricted
+no ssd file integrity control
+ssd-control-end cb0a3fdb1f3a1af4e4430033719968c0
+!
+!
+unit-type-control-start
+unit-type unit 1 network gi uplink none
+unit-type-control-end
+!
+vlan database
+vlan 99,999
+exit
+voice vlan oui-table add 0001e3 Siemens_AG_phone
+voice vlan oui-table add 00036b Cisco_phone
+voice vlan oui-table add 00096e Avaya
+voice vlan oui-table add 000fe2 H3C_Aolynk
+voice vlan oui-table add 0060b9 Philips_and_NEC_AG_phone
+voice vlan oui-table add 00d01e Pingtel_phone
+voice vlan oui-table add 00e075 Polycom/Veritel_phone
+voice vlan oui-table add 00e0bb 3Com_phone
+ip dhcp excluded-address 192.168.100.1 192.168.100.1
+ip dhcp excluded-address 192.168.100.254 192.168.100.254
+ipv6 unicast-routing
+bonjour interface range vlan 1
+hostname CamodocChaseSW1
+username admin password encrypted $15$wi2h88hI7LlDpWKQ$MsGAMdAY9g2yh7Bs1RIOFV33xa0SKc7YT6XrJsYA/7h45udn2Pp7Uy3lKyA9xOY1e8nK1l60R0Qg/OrbuIJtiA== privilege 15
+!
+interface vlan 1
+ ip address 192.168.100.1 255.255.255.0
+ no ip address dhcp
+ ipv6 address 2001:dead:beef:cafe::1/64
+ ipv6 address fe80::beef:1234 link-local
+!
+interface vlan 999
+ name blackhole
+!
+interface GigabitEthernet1
+ switchport mode trunk
+ switchport trunk native vlan 999
+!
+interface loopback1
+ ip address 10.10.10.1 255.255.255.255
+ ipv6 address 2001:cafe::1/128
+!
+exit
+
+
+
+
+
+
+
+
+
+
+
+
+
+new config 
+CamodocChaseSW1#show run
+config-file-header
+CamodocChaseSW1
+v4.0.0.93 / RLSB4.0HF_950_778_052
+CLI v1.0
+file SSD indicator encrypted
+@
+ssd-control-start
+ssd config
+ssd file passphrase control unrestricted
+no ssd file integrity control
+ssd-control-end cb0a3fdb1f3a1af4e4430033719968c0
+!
+!
+unit-type-control-start
+unit-type unit 1 network gi uplink none
+unit-type-control-end
+!
+vlan database
+vlan 99,999
+exit
+voice vlan oui-table add 0001e3 Siemens_AG_phone
+voice vlan oui-table add 00036b Cisco_phone
+voice vlan oui-table add 00096e Avaya
+voice vlan oui-table add 000fe2 H3C_Aolynk
+voice vlan oui-table add 0060b9 Philips_and_NEC_AG_phone
+voice vlan oui-table add 00d01e Pingtel_phone
+voice vlan oui-table add 00e075 Polycom/Veritel_phone
+voice vlan oui-table add 00e0bb 3Com_phone
+ip dhcp excluded-address 192.168.100.1 192.168.100.1
+ip dhcp excluded-address 192.168.100.254 192.168.100.254
+ipv6 unicast-routing
+bonjour interface range vlan 1
+hostname CamodocChaseSW1
+username admin password encrypted $15$wi2h88hI7LlDpWKQ$MsGAMdAY9g2yh7Bs1RIOFV33xa0SKc7YT6XrJsYA/7h45udn2Pp7Uy3lKyA9xOY1e8nK1l60R0Qg/OrbuIJtiA== privilege 15
+username DaphneEmily password encrypted $15$nZdU2/eeOAJROxzg$u4XQoIu2yrSv/0C0esvON6v2koIr18GtjajMKD0FwJVe12JjP84QQKmjWd0sAQ5qJraeGOO9tpSerEipaZA03A== privilege 15
+ip ssh server
+ip ssh password-auth
+!
+interface vlan 1
+ ip address 192.168.100.1 255.255.255.0
+ no ip address dhcp
+ ipv6 address 2001:dead:beef:cafe::1/64
+ ipv6 address fe80::beef:1234 link-local
+!
+interface vlan 999
+ name blackhole
+!
+interface GigabitEthernet1
+ switchport mode trunk
+ switchport trunk native vlan 999
+!
+interface loopback1
+ ip address 10.10.10.1 255.255.255.255
+ ipv6 address 2001:cafe::1/128
+!
+exit
+
+
+
+
+
+
+
+
+
+
+
+new config 
+conf t
+ssd-control-start
+ssd config
+ssd file passphrase control unrestricted
+no ssd file integrity control
+ssd-control-end cb0a3fdb1f3a1af4e4430033719968c0
+!
+!
+unit-type-control-start
+unit-type unit 1 network gi uplink none
+unit-type-control-end
+!
+vlan database
+vlan 99,999
+exit
+voice vlan oui-table add 0001e3 Siemens_AG_phone
+voice vlan oui-table add 00036b Cisco_phone
+voice vlan oui-table add 00096e Avaya
+voice vlan oui-table add 000fe2 H3C_Aolynk
+voice vlan oui-table add 0060b9 Philips_and_NEC_AG_phone
+voice vlan oui-table add 00d01e Pingtel_phone
+voice vlan oui-table add 00e075 Polycom/Veritel_phone
+voice vlan oui-table add 00e0bb 3Com_phone
+ip dhcp excluded-address 192.168.100.1 192.168.100.1
+ip dhcp excluded-address 192.168.100.254 192.168.100.254
+ipv6 unicast-routing
+bonjour interface range vlan 1
+hostname CamodocChaseSW1
+username admin password encrypted $15$wi2h88hI7LlDpWKQ$MsGAMdAY9g2yh7Bs1RIOFV33xa0SKc7YT6XrJsYA/7h45udn2Pp7Uy3lKyA9xOY1e8nK1l60R0Qg/OrbuIJtiA== privilege 15
+username DaphneEmily password encrypted $15$nZdU2/eeOAJROxzg$u4XQoIu2yrSv/0C0esvON6v2koIr18GtjajMKD0FwJVe12JjP84QQKmjWd0sAQ5qJraeGOO9tpSerEipaZA03A== privilege 15
+ip ssh server
+ip ssh password-auth
+!
+interface vlan 1
+ ip address 192.168.100.1 255.255.255.0
+ no ip address dhcp
+ ipv6 address 2001:dead:beef:cafe::1/64
+ ipv6 address fe80::beef:1234 link-local
+!
+interface vlan 999
+ name blackhole
+!
+interface GigabitEthernet1
+ switchport mode trunk
+ switchport trunk native vlan 999
+!
+interface loopback1
+ ip address 10.10.10.1 255.255.255.255
+ ipv6 address 2001:cafe::1/128
+!
+exit
+ipv6 default-gateway fe80::1%vlan1 vlan1
+ip default-gateway 192.168.100.254
+
+
+
+
+
+
+
+
+----------------------------
+new config
+
+
+
+
+
+conf t
+hostname CamodocChaseSW1
+v4.0.0.93 / RLSB4.0HF_950_778_052
+CLI v1.0
+file SSD indicator encrypted
+@
+ssd-control-start
+ssd config
+ssd file passphrase control unrestricted
+no ssd file integrity control
+ssd-control-end cb0a3fdb1f3a1af4e4430033719968c0
+!
+!
+unit-type-control-start
+unit-type unit 1 network gi uplink none
+unit-type-control-end
+!
+vlan database
+vlan 99,999
+exit
+voice vlan oui-table add 0001e3 Siemens_AG_phone
+voice vlan oui-table add 00036b Cisco_phone
+voice vlan oui-table add 00096e Avaya
+voice vlan oui-table add 000fe2 H3C_Aolynk
+voice vlan oui-table add 0060b9 Philips_and_NEC_AG_phone
+voice vlan oui-table add 00d01e Pingtel_phone
+voice vlan oui-table add 00e075 Polycom/Veritel_phone
+voice vlan oui-table add 00e0bb 3Com_phone
+ip dhcp excluded-address 192.168.100.1 192.168.100.1
+ip dhcp excluded-address 192.168.100.254 192.168.100.254
+ipv6 unicast-routing
+bonjour interface range vlan 1
+hostname CamodocChaseSW1
+username admin password encrypted $15$wi2h88hI7LlDpWKQ$MsGAMdAY9g2yh7Bs1RIOFV33xa0SKc7YT6XrJsYA/7h45udn2Pp7Uy3lKyA9xOY1e8nK1l60R0Qg/OrbuIJtiA== privilege 15
+username DaphneEmily password encrypted $15$nZdU2/eeOAJROxzg$u4XQoIu2yrSv/0C0esvON6v2koIr18GtjajMKD0FwJVe12JjP84QQKmjWd0sAQ5qJraeGOO9tpSerEipaZA03A== privilege 15
+ip ssh server
+ip ssh password-auth
+ip domain name camodocchase.com
+ip name-server  10.10.10.2
+!
+interface vlan 1
+ ip address 192.168.100.1 255.255.255.0
+ no ip address dhcp
+ ipv6 address 2001:dead:beef:cafe::1/64
+ ipv6 address fe80::beef:1234 link-local
+!
+interface vlan 999
+ name blackhole
+!
+interface GigabitEthernet1
+ switchport mode trunk
+ switchport trunk native vlan 999
+!
+interface loopback1
+ ip address 10.10.10.1 255.255.255.255
+ ipv6 address 2001:cafe::1/128
+!
+exit
+ip default-gateway 192.168.100.254
+ipv6 default-gateway fe80::1%vlan1 vlan1
+
+
+
+
+
+
+
+
+
+--------------------
+new config
+
+conf t
+CamodocChaseSW1
+v4.0.0.93 / RLSB4.0HF_950_778_052
+CLI v1.0
+file SSD indicator encrypted
+@
+ssd-control-start
+ssd config
+ssd file passphrase control unrestricted
+no ssd file integrity control
+ssd-control-end cb0a3fdb1f3a1af4e4430033719968c0
+!
+!
+unit-type-control-start
+unit-type unit 1 network gi uplink none
+unit-type-control-end
+!
+vlan database
+vlan 99,999
+exit
+voice vlan oui-table add 0001e3 Siemens_AG_phone
+voice vlan oui-table add 00036b Cisco_phone
+voice vlan oui-table add 00096e Avaya
+voice vlan oui-table add 000fe2 H3C_Aolynk
+voice vlan oui-table add 0060b9 Philips_and_NEC_AG_phone
+voice vlan oui-table add 00d01e Pingtel_phone
+voice vlan oui-table add 00e075 Polycom/Veritel_phone
+voice vlan oui-table add 00e0bb 3Com_phone
+ip dhcp excluded-address 192.168.100.1 192.168.100.1
+ip dhcp excluded-address 192.168.100.254 192.168.100.254
+ipv6 unicast-routing
+bonjour interface range vlan 1
+ip access-list extended MGMT_ALLOW
+permit tcp any any any 22 ace-priority 20
+permit tcp any any any www ace-priority 40
+permit tcp any any any 443 ace-priority 60
+permit ip any any ace-priority 80
+exit
+hostname CamodocChaseSW1
+username admin password encrypted $15$wi2h88hI7LlDpWKQ$MsGAMdAY9g2yh7Bs1RIOFV33xa0SKc7YT6XrJsYA/7h45udn2Pp7Uy3lKyA9xOY1e8nK1l60R0Qg/OrbuIJtiA== privilege 15
+username DaphneEmily password encrypted $15$nZdU2/eeOAJROxzg$u4XQoIu2yrSv/0C0esvON6v2koIr18GtjajMKD0FwJVe12JjP84QQKmjWd0sAQ5qJraeGOO9tpSerEipaZA03A== privilege 15
+ip ssh server
+ip ssh password-auth
+ip domain name camodocchase.com
+ip name-server  10.10.10.2
+!
+interface vlan 1
+ ip address 192.168.100.1 255.255.255.0
+ no ip address dhcp
+ ipv6 address 2001:dead:beef:cafe::1/64
+ ipv6 address fe80::beef:1234 link-local
+ service-acl input MGMT_ALLOW
+!
+interface vlan 999
+ name blackhole
+!
+interface GigabitEthernet1
+ switchport mode trunk
+ switchport trunk native vlan 999
+!
+interface loopback1
+ ip address 10.10.10.1 255.255.255.255
+ ipv6 address 2001:cafe::1/128
+!
+exit
+ip default-gateway 192.168.100.254
+ipv6 default-gateway fe80::1%vlan1 vlan1
+
+
+
+
+---------------------------
+new config
+
+conf t
+CamodocChaseSW1
+v4.0.0.93 / RLSB4.0HF_950_778_052
+CLI v1.0
+file SSD indicator encrypted
+@
+ssd-control-start
+ssd config
+ssd file passphrase control unrestricted
+no ssd file integrity control
+ssd-control-end cb0a3fdb1f3a1af4e4430033719968c0
+!
+!
+unit-type-control-start
+unit-type unit 1 network gi uplink none
+unit-type-control-end
+!
+vlan database
+vlan 99,999
+exit
+voice vlan oui-table add 0001e3 Siemens_AG_phone
+voice vlan oui-table add 00036b Cisco_phone
+voice vlan oui-table add 00096e Avaya
+voice vlan oui-table add 000fe2 H3C_Aolynk
+voice vlan oui-table add 0060b9 Philips_and_NEC_AG_phone
+voice vlan oui-table add 00d01e Pingtel_phone
+voice vlan oui-table add 00e075 Polycom/Veritel_phone
+voice vlan oui-table add 00e0bb 3Com_phone
+ip dhcp excluded-address 192.168.100.1 192.168.100.1
+ip dhcp excluded-address 192.168.100.254 192.168.100.254
+ipv6 unicast-routing
+bonjour interface range vlan 1
+ip access-list extended MGMT_ALLOW
+permit tcp any any any 22 ace-priority 20
+permit tcp any any any www ace-priority 40
+permit tcp any any any 443 ace-priority 60
+permit ip any any ace-priority 80
+exit
+ip access-list extended MGMT_ACL_V4
+deny tcp any any 192.168.100.1 0.0.0.0 22 ace-priority 15
+deny tcp any any 192.168.100.1 0.0.0.0 443 ace-priority 25
+permit ip any any ace-priority 50
+exit
+ipv6 access-list MGMT_ACL_V6
+deny tcp any any fe80::beef:1234/128 22 ace-priority 15
+deny tcp any any fe80::beef:1234/128 443 ace-priority 16
+deny tcp any any 2001:dead:beef:cafe::1/128 443 ace-priority 20
+deny tcp any any 2001:dead:beef:cafe::1/128 22 ace-priority 21
+permit ipv6 any any ace-priority 50
+exit
+hostname CamodocChaseSW1
+username admin password encrypted $15$wi2h88hI7LlDpWKQ$MsGAMdAY9g2yh7Bs1RIOFV33xa0SKc7YT6XrJsYA/7h45udn2Pp7Uy3lKyA9xOY1e8nK1l60R0Qg/OrbuIJtiA== privilege 15
+username emily password encrypted $15$Rxm0e0FIJ4HT5at3$LJVleNSkdQo3a/ZlyxjOqvQBXL7uJYXT/FbupiSzrohqyI0C5JraUjEn5G92o/V+CYVyXxeYD+uMImSPhA0bpQ== privilege 15
+username DaphneEmily password encrypted $15$nZdU2/eeOAJROxzg$u4XQoIu2yrSv/0C0esvON6v2koIr18GtjajMKD0FwJVe12JjP84QQKmjWd0sAQ5qJraeGOO9tpSerEipaZA03A== privilege 15
+ip ssh server
+ip ssh password-auth
+ip domain name camodocchase.com
+ip name-server  10.10.10.2
+!
+interface vlan 1
+ ip address 192.168.100.1 255.255.255.0
+ no ip address dhcp
+ ipv6 address 2001:dead:beef:cafe::1/64
+ ipv6 address fe80::beef:1234 link-local
+!
+interface vlan 999
+ name blackhole
+!
+interface GigabitEthernet1
+ switchport mode trunk
+ switchport trunk native vlan 999
+!
+interface loopback1
+ ip address 10.10.10.1 255.255.255.255
+ ipv6 address 2001:cafe::1/128
+!
+exit
+ip default-gateway 192.168.100.254
+ipv6 default-gateway fe80::1%vlan1 vlan1
+
+
+
+--------------------------------------
+FINAL COMPLETED Configurations
+
+conf t
+CamodocChaseSW1
+v4.0.0.93 / RLSB4.0HF_950_778_052
+CLI v1.0
+file SSD indicator encrypted
+@
+ssd-control-start
+ssd config
+ssd file passphrase control unrestricted
+no ssd file integrity control
+ssd-control-end cb0a3fdb1f3a1af4e4430033719968c0
+!
+!
+unit-type-control-start
+unit-type unit 1 network gi uplink none
+unit-type-control-end
+!
+vlan database
+vlan 42,99,999
+exit
+voice vlan oui-table add 0001e3 Siemens_AG_phone
+voice vlan oui-table add 00036b Cisco_phone
+voice vlan oui-table add 00096e Avaya
+voice vlan oui-table add 000fe2 H3C_Aolynk
+voice vlan oui-table add 0060b9 Philips_and_NEC_AG_phone
+voice vlan oui-table add 00d01e Pingtel_phone
+voice vlan oui-table add 00e075 Polycom/Veritel_phone
+voice vlan oui-table add 00e0bb 3Com_phone
+ip dhcp excluded-address 192.168.100.1 192.168.100.1
+ip dhcp excluded-address 192.168.100.254 192.168.100.254
+ipv6 unicast-routing
+bonjour interface range vlan 1
+ip access-list extended MGMT_ALLOW
+permit tcp any any any 22 ace-priority 20
+permit tcp any any any www ace-priority 40
+permit tcp any any any 443 ace-priority 60
+permit ip any any ace-priority 80
+exit
+ip access-list extended MGMT_ACL_V4
+deny tcp any any 192.168.100.1 0.0.0.0 22 ace-priority 15
+deny tcp any any 192.168.100.1 0.0.0.0 443 ace-priority 25
+deny tcp any any 192.168.100.1 0.0.0.0 www ace-priority 30
+permit ip any any ace-priority 50
+exit
+ipv6 access-list MGMT_ACL_V6
+deny tcp any any fe80::beef:1234/128 22 ace-priority 15
+deny tcp any any fe80::beef:1234/128 443 ace-priority 16
+deny tcp any any fe80::beef:1234/128 www ace-priority 17
+deny tcp any any 2001:dead:beef:cafe::1/128 443 ace-priority 20
+deny tcp any any 2001:dead:beef:cafe::1/128 22 ace-priority 21
+deny tcp any any 2001:dead:beef:cafe::1/128 www ace-priority 35
+permit ipv6 any any ace-priority 50
+exit
+hostname CamodocChaseSW1
+username admin password encrypted $15$wi2h88hI7LlDpWKQ$MsGAMdAY9g2yh7Bs1RIOFV33xa0SKc7YT6XrJsYA/7h45udn2Pp7Uy3lKyA9xOY1e8nK1l60R0Qg/OrbuIJtiA== privilege 15
+username emily password encrypted $15$Rxm0e0FIJ4HT5at3$LJVleNSkdQo3a/ZlyxjOqvQBXL7uJYXT/FbupiSzrohqyI0C5JraUjEn5G92o/V+CYVyXxeYD+uMImSPhA0bpQ== privilege 15
+username DaphneEmily password encrypted $15$nZdU2/eeOAJROxzg$u4XQoIu2yrSv/0C0esvON6v2koIr18GtjajMKD0FwJVe12JjP84QQKmjWd0sAQ5qJraeGOO9tpSerEipaZA03A== privilege 15
+ip ssh server
+ip ssh password-auth
+ip domain name camodocchase.com
+ip name-server  10.10.10.2
+!
+interface vlan 1
+ ip address 192.168.100.1 255.255.255.0
+ no ip address dhcp
+ ipv6 address 2001:dead:beef:cafe::1/64
+ ipv6 address fe80::beef:1234 link-local
+ service-acl input MGMT_ACL_V4 MGMT_ACL_V6
+!
+interface vlan 42
+ name AnswerToEverything
+ ip address 192.168.42.1 255.255.255.0
+ ipv6 address 2001:db8:42:beef::1/64
+ ipv6 address fe80::42:beef link-local
+!
+interface vlan 999
+ name blackhole
+!
+interface GigabitEthernet1
+ switchport mode trunk
+ switchport trunk native vlan 999
+!
+interface GigabitEthernet21
+ switchport access vlan 42
+!
+interface loopback1
+ ip address 10.10.10.1 255.255.255.255
+ ipv6 address 2001:cafe::1/128
+!
+exit
+ip default-gateway 192.168.100.254
+ipv6 default-gateway fe80::1%vlan1 vlan1

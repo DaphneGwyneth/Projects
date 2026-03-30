@@ -1,0 +1,21 @@
+hostname camodocR1
+!
+interface vlan 1
+ip address 192.168.100.1 255.255.255.0
+ipv6 address fe80::beef:1234 link-local
+ipv6 address 2001:dead:beef:cafe::1/64
+!
+ipv6 unicast-routing
+!
+vlan 999
+interface vlan 999
+name blackhole
+!
+interface gigabitEthernet 1
+switchport mode trunk
+switchport trunk native vlan 999
+!
+interface loopback 1
+ipv6 address 2001:cafe::1/128
+ip address 10.10.10.1 255.255.255.255
+!

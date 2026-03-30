@@ -1,0 +1,6 @@
+Catalyst 1300 Configurations
+username:admin
+password: Dontpanic1!
+
+hostname: EmilyDaphne
+

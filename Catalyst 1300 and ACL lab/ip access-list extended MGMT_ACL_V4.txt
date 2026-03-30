@@ -1,0 +1,14 @@
+ip access-list extended MGMT_ACL_V4
+deny tcp any any 192.168.100.1 0.0.0.0 22 ace-priority 15
+!deny tcp any any 192.168.100.1 0.0.0.0 80 ace-priority 16
+deny tcp any any 192.168.100.1 0.0.0.0 443 ace-priority 25
+permit ip any any ace-priority 50
+!
+ipv6 access-list MGMT_ACL_V6
+deny tcp any any fe80::beef:1234/128 22 ace-priority 15
+deny tcp any any fe80::beef:1234/128 443 ace-priority 16
+deny tcp any any fe80::beef:1234/128 80 ace-priority 17
+deny tcp any any 2001:dead:beef:cafe::1/128 443 ace-priority 20
+deny tcp any any 2001:dead:beef:cafe::1/128 22 ace-priority 21
+!deny tcp any any 2001:dead:beef:cafe::1/128 80 ace-priority 22
+permit ipv6 any any ace-priority 50
