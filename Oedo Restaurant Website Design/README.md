@@ -6,7 +6,11 @@ The site is built to showcase the restaurant's menu, story, and customer reviews
 
 ## Live Demo
 
-> Add your deployed link here once published (e.g. GitHub Pages, Netlify, Vercel).
+
+
+https://github.com/user-attachments/assets/0955ccb5-36bb-4c75-85a1-db407a1c96a2
+
+
 
 ## Features
 
@@ -93,10 +97,6 @@ Since this is a static site, it can be deployed for free on any of the following
 - [ ] Add a contact form or click-to-call button
 - [ ] Add SEO meta tags (description, Open Graph, favicon)
 - [ ] Add accessibility improvements (alt text audit, keyboard navigation for carousel/slider)
-
-## License
-
-This project is provided as-is for use by Oedo Japanese Restaurant. Add a license of your choice (e.g. MIT) if you intend to open-source the code itself.
 
 ## Acknowledgements
 
